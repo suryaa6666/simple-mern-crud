@@ -6,7 +6,6 @@ function App() {
   const [foodName, setFoodName] = useState("");
   const [days, setDays] = useState(0);
   const [updateFoodName, setUpdateFoodName] = useState("");
-  const [updateDays, setUpdateDays] = useState("");
   const [foodList, setFoodList] = useState([]);
 
   useEffect(() => {
