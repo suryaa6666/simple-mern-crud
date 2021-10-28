@@ -42,13 +42,11 @@ function App() {
     Axios.put("https://belajar-mern-crud.herokuapp.com/update", {
       id: id,
       foodName: updateFoodName,
-      daysSinceIAte: updateDays,
     }).then(() => {
       setFoodList(
         foodList.filter((x) => {
           if (x._id === id) {
-            x.foodName = updateFoodName;
-            x.daysSinceIAte = updateDays;
+              x.foodName = updateFoodName;
           }
           return x;
         })
@@ -89,16 +87,7 @@ function App() {
                 setUpdateFoodName(event.target.value);
               }}
               placeholder="New food name..."
-            ></input>{" "}
-            <br />
-            <input
-              type="text"
-              onChange={(event) => {
-                setUpdateDays(event.target.value);
-              }}
-              placeholder="New days..."
-            ></input>{" "}
-            <br />
+            ></input>
             <button onClick={() => updateItem(val._id)}> Update </button> <br />
             <button onClick={() => deleteItem(val._id)}> Delete </button>
           </div>
