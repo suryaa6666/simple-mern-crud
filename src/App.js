@@ -10,24 +10,24 @@ function App() {
   const [updateFoodName, setUpdateFoodName] = useState("");
   
   useEffect(() => {
-    Axios.get("http://localhost:3001/read").then((response) => {
+    Axios.get("https://belajar-mern-crud.herokuapp.com//read").then((response) => {
       setFoodList(response.data);
     });
   }, []);
   
   const addToList = () => {
-    Axios.post("http://localhost:3001/insert", {
+    Axios.post("https://belajar-mern-crud.herokuapp.com//insert", {
       foodName: foodName,
       days: days,
     });
   };
   
   const deleteItem = (id) => {
-    Axios.delete(`http://localhost:3001/delete/${id}`);
+    Axios.delete(`https://belajar-mern-crud.herokuapp.com//delete/${id}`);
   };
   
   const updateItem = (id) => {
-    Axios.put("http://localhost:3001/update" , {
+    Axios.put("https://belajar-mern-crud.herokuapp.com//update" , {
       id: id,
       foodName: updateFoodName
     });
